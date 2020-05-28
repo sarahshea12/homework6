@@ -1,1 +1,1 @@
-# homework6
+An application that allows weather search in different cities.

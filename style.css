@@ -1,0 +1,13 @@
+h1 {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+#searchDiv {
+    float: left;
+}
+#cityDiv {
+    float: right;
+    block-size: auto;
+    border: groove;
+}
