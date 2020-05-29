@@ -5,9 +5,32 @@ h1 {
 }
 #searchDiv {
     float: left;
+    width: 15%;
+    margin-right: 5%;
 }
 #cityDiv {
     float: right;
     block-size: auto;
     border: groove;
+    width: 75%;
+    padding-right: 80px;
+    height: 300px;
+}
+.hide {
+    visibility: hidden;
+}
+.future {
+    float: left;
+    width: 18%;
+    border: groove;
+    margin-right: 10px;
+    padding-right: 10px;
+    margin-top: 40px;
+    height: 300px;
+}
+#day2 {
+    margin-left: 20%;
+}
+img {
+    float: right;
 }
