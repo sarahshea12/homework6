@@ -5,28 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
 </head>
 <body>
     <h1>Weather Dashboard</h1>
     <div id="searchDiv">
         <h2>Search City</h2>
         <input id="cityInput">
-        <button id="click">Search</button>
+        <input type="submit" id="click" value="Search">
+        <!-- <button id="click">Search</button> -->
         <br>
         <br>
         <!--Section for appending searched cities-->
         <div id="history"></div>
     </div>
     <!--Display info for the city searched-->
-    <div class="hide" id="cityDiv">
+    <div class="hide row-1 col-12" id="cityDiv">
         <h2 id="cityName"></h2>
         <div id="present"></div>
     </div>
-    <div class="hide" id="forecast">
-        <div class="future" id="day2"></div>
-        <div class="future" id="day3"></div>
-        <div class="future" id="day4"></div>
-        <div class="future" id="day5"></div>
+    <div class="hide row-1" id="forecast">
+        <div class="col-3 future" id="day2"></div>
+        <div class="col-3 future" id="day3"></div>
+        <div class="col-3 future" id="day4"></div>
+        <div class="col-3 future" id="day5"></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

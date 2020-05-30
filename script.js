@@ -1,9 +1,11 @@
    // This is my API key
    var APIKey = "032b8a094b69214ac66a358522135a00";
+   var cities = [];
    
    // Click event
-   function handleClick(){
-    var cityName = $("#cityInput").val().trim()
+   function handleClick(cityName){
+    // var cityName = $("#cityInput").val().trim()
+    // $("#cityInput").val("");
    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + APIKey
    $.ajax({
      url: queryURL,
@@ -23,9 +25,11 @@
    
     // Put the current info in #present
     var newP = $("<p>");
-    newP.text("Degrees (F): " + ((response.list[0].main.temp- 273.15) * 1.80 + 32).toFixed(2) +
-    " Humidity %: " + response.list[0].main.humidity);
+    newP.text("Degrees (F): " + ((response.list[0].main.temp- 273.15) * 1.80 + 32).toFixed(2));
+    var humP = $("<p>");
+    humP.text(" Humidity %: " + response.list[0].main.humidity)
     $("#present").append(newP);
+    $("#present").append(humP);
     $("#cityName").text("Current weather in " + response.city.name)
     var iconOne = $("<img>");
 		var iconOneSrc =
@@ -79,23 +83,50 @@
     $("#day5").append(icon5);
 
     // Add to history Div
-    newBtn = $("<button>");
-    newBtn.text(cityName);
-    newBtn.addClass("prevBtn")
-    $("#history").append(newBtn);
-    $("#cityInput").text("");
 
     // Commit to local storage
 
    })};
 
-   $("#click").on("click", handleClick);
+   $("#click").on("click", function(){
+    var cityName = $("#cityInput").val().trim()
+    $("#cityInput").val("");
+    cities.push(cityName);
+    // localStorage.setItem("Cities",cities);
+    console.log("Cities Aray: "+cities);
+    $("#history").empty();
+
+    // var temp = localStorage.getItem("Cities")
+    for(var i=0;i<cities.length;i++){
+        var newBtn = $("<button>");
+        newBtn.text(cities[i]);
+        newBtn.addClass("prevBtn");
+        newBtn.attr("data-name", cities[i]);
+        $("#history").append(newBtn);
+        $("#history").append("<br/>");
+    }
+    
+
+    handleClick(cityName);
+   });
 
    // How to use history buttons?
    function historyBtns() {
-    cityName = $(this).text();
+    // cityName = $(this).text();
     $("#present").empty();
     console.log("hello");
    }
 
-   $(".prevBtn").on("click", historyBtns);
+   $(document).on("click", "button", function(){
+    console.log("Inside prevbtn click");
+    var cityName = $(this).attr("data-name");
+    handleClick(cityName);
+   })
+
+
+
+   /*$(".prevBtn").on("click", function(){
+       console.log("Inside prevbtn click");
+       var cityName = $(this).attr("data-name");
+       handleClick(cityName);
+   });*/

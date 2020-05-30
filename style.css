@@ -13,7 +13,7 @@ h1 {
     block-size: auto;
     border: groove;
     width: 75%;
-    padding-right: 80px;
+    padding-right: 10px;
     height: 300px;
 }
 .hide {
@@ -21,11 +21,9 @@ h1 {
 }
 .future {
     float: left;
-    width: 18%;
     border: groove;
-    margin-right: 10px;
-    padding-right: 10px;
-    margin-top: 40px;
+    margin-top: 10px;
+    width: 150px;
     height: 300px;
 }
 #day2 {
@@ -33,4 +31,10 @@ h1 {
 }
 img {
     float: right;
+}
+.prevBtn{
+    padding:10px;
+    background-color:black;
+    color:white;
+    margin-right:10px;
 }
