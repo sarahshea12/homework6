@@ -38,3 +38,15 @@ img {
     color:white;
     margin-right:10px;
 }
+.green {
+    color: chartreuse;
+}
+.yellow {
+    color: orange;
+}
+.orange {
+    color: red
+}
+.red {
+    color: purple
+}
