@@ -6,7 +6,7 @@
    function handleClick(cityName){
     // var cityName = $("#cityInput").val().trim()
     // $("#cityInput").val("");
-   var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + APIKey
+   var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + APIKey
    $.ajax({
      url: queryURL,
      method: "GET"
